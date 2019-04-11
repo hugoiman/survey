@@ -116,33 +116,33 @@ class Kuesioner extends CI_Controller{
 				$jawaban = array(
 					'jawaban' => $pilihan[$i]
 				);
-				$answer['jawab'] = $this->m_kuesioner->m_get_jawaban($id_sk[$i], $nipg, $id_kuesioner)->result_array();//get jawaban sebelumnya
-				foreach($answer['jawab'] as $a){ //
-					$ans = $a['jawaban'];
-					if($ans == "1"){ //jika jawaban sebelumnya 1 maka kurangi 1 pada jawaban 1, dst sampai jawaban 5
-						$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban1');
-					}else if($ans == "2"){
-						$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban2');
-					}else if($ans == "3"){
-						$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban3');
-					}else if($ans == "4"){
-						$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban4');
-					}else{
-						$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban5');
-					}
-				}
+				// $answer['jawab'] = $this->m_kuesioner->m_get_jawaban($id_sk[$i], $nipg, $id_kuesioner)->result_array();//get jawaban sebelumnya
+				// foreach($answer['jawab'] as $a){ //
+				// 	$ans = $a['jawaban'];
+				// 	if($ans == "1"){ //jika jawaban sebelumnya 1 maka kurangi 1 pada jawaban 1, dst sampai jawaban 5
+				// 		$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban1');
+				// 	}else if($ans == "2"){
+				// 		$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban2');
+				// 	}else if($ans == "3"){
+				// 		$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban3');
+				// 	}else if($ans == "4"){
+				// 		$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban4');
+				// 	}else{
+				// 		$this->m_kuesioner->m_update_statistik2($id_sk[$i], 'jawaban5');
+				// 	}
+				// }
 				$this->m_kuesioner->m_update_jawaban('tb_respon_kuesioner', $where, $jawaban); //update jawaban yang baru
-				if($pilihan[$i] == "1"){ //jika jawaban terbaru 1 tambah 1 pada jawaban 1, dst sampai jawaban 5
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban1');
-				}else if($pilihan[$i] == "2"){
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban2');
-				}else if($pilihan[$i] == "3"){
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban3');
-				}else if($pilihan[$i] == "4"){
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban4');
-				}else{
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban5');
-				}
+				// if($pilihan[$i] == "1"){ //jika jawaban terbaru 1 tambah 1 pada jawaban 1, dst sampai jawaban 5
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban1');
+				// }else if($pilihan[$i] == "2"){
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban2');
+				// }else if($pilihan[$i] == "3"){
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban3');
+				// }else if($pilihan[$i] == "4"){
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban4');
+				// }else{
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban5');
+				// }
 			}
 		}
 		else{ //jika belum dijawab insert jawaban
@@ -155,17 +155,17 @@ class Kuesioner extends CI_Controller{
 					'jawaban' => $pilihan[$i]
 				);
 				$this->m_kuesioner->m_simpan_jawaban('tb_respon_kuesioner', $jawaban);//insert jawaban yang baru
-				if($pilihan[$i] == "1"){ //jika jawaban terbaru 1 tambah 1 pada jawaban 1, dst sampai jawaban 5
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban1');
-				}else if($pilihan[$i] == "2"){
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban2');
-				}else if($pilihan[$i] == "3"){
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban3');
-				}else if($pilihan[$i] == "4"){
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban4');
-				}else{
-					$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban5');
-				}
+				// if($pilihan[$i] == "1"){ //jika jawaban terbaru 1 tambah 1 pada jawaban 1, dst sampai jawaban 5
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban1');
+				// }else if($pilihan[$i] == "2"){
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban2');
+				// }else if($pilihan[$i] == "3"){
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban3');
+				// }else if($pilihan[$i] == "4"){
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban4');
+				// }else{
+				// 	$this->m_kuesioner->m_update_statistik1($id_sk[$i], 'jawaban5');
+				// }
 		 	}
 		}
 		header('Location:daftar_kuesioner');

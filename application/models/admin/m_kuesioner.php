@@ -194,19 +194,19 @@ class M_kuesioner extends CI_Model{
 		return $this->db->insert_id();
 	}
 
-  function m_statistik_default($data){ //statistik awal setelah dibuat
-		$this->db->insert('tb_statistik', $data);
-	}
+  // function m_statistik_default($data){ //statistik awal setelah dibuat
+	// 	$this->db->insert('tb_statistik', $data);
+	// }
 
   function m_edit_tb_soal($table,$where,$data){ //edit soal
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
 
-	function m_edit_tb_statistik($table,$where,$data){ //edit soal
-		$this->db->where($where);
-		$this->db->update($table,$data);
-	}
+	// function m_edit_tb_statistik($table,$where,$data){ //edit soal
+	// 	$this->db->where($where);
+	// 	$this->db->update($table,$data);
+	// }
 
 	function m_edit_tb_respon($table,$where,$data){ //edit soal
 		$this->db->where($where);

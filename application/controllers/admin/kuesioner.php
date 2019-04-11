@@ -274,18 +274,19 @@ class Kuesioner extends CI_Controller{
 			'id_sub' => $this->input->post('sub'),
 			'soal_kuesioner' => $this->input->post('soal')
 		);
-		$id = $this->m_kuesioner->m_tambah_soal($data);
-			$data2 = array(
-				'id_kuesioner' => $this->input->post('id'),
-				'id_sk' => $id,
-				'id_sub' => $this->input->post('sub'),
-				'jawaban1' => 0,
-				'jawaban2' => 0,
-				'jawaban3' => 0,
-				'jawaban4' => 0,
-				'jawaban5' => 0
-			);
-		$this->m_kuesioner->m_statistik_default($data2);
+    $this->m_kuesioner->m_tambah_soal($data);
+		// $id = $this->m_kuesioner->m_tambah_soal($data);
+		// 	$data2 = array(
+		// 		'id_kuesioner' => $this->input->post('id'),
+		// 		'id_sk' => $id,
+		// 		'id_sub' => $this->input->post('sub'),
+		// 		'jawaban1' => 0,
+		// 		'jawaban2' => 0,
+		// 		'jawaban3' => 0,
+		// 		'jawaban4' => 0,
+		// 		'jawaban5' => 0
+		// 	);
+		// $this->m_kuesioner->m_statistik_default($data2);
 	}
 
   function edit_sub(){ //edit soal
@@ -298,7 +299,7 @@ class Kuesioner extends CI_Controller{
 			);
 		$this->m_kuesioner->m_edit_tb_soal('tb_soal_kuesioner', $where, $data);
 		$this->m_kuesioner->m_edit_tb_respon('tb_respon_kuesioner', $where, $data);
-		$this->m_kuesioner->m_edit_tb_statistik('tb_statistik', $where, $data);
+		// $this->m_kuesioner->m_edit_tb_statistik('tb_statistik', $where, $data);
 	}
 
   function edit_soal(){ //edit soal
@@ -311,7 +312,7 @@ class Kuesioner extends CI_Controller{
 			);
 		$this->m_kuesioner->m_edit_tb_soal('tb_soal_kuesioner', $where, $data);
 		$this->m_kuesioner->m_edit_tb_respon('tb_respon_kuesioner', $where, $data);
-		$this->m_kuesioner->m_edit_tb_statistik('tb_statistik', $where, $data);
+		// $this->m_kuesioner->m_edit_tb_statistik('tb_statistik', $where, $data);
 	}
 
   function hapus_soal(){ //delete soal
@@ -348,18 +349,19 @@ class Kuesioner extends CI_Controller{
 				'id_sub' => $clonesoal['id_sub'],
 				'soal_kuesioner' => $clonesoal['soal_kuesioner']
 			);
-			$id_sk = $this->m_kuesioner->m_create_soal($data);
-			$data2 = array(
-				'id_kuesioner' => $id_clone,
-				'id_sub' => $clonesoal['id_sub'],
-				'id_sk' => $id_sk,
-				'jawaban1' => 0,
-				'jawaban2' => 0,
-				'jawaban3' => 0,
-				'jawaban4' => 0,
-				'jawaban5' => 0
-			);
-			$this->m_kuesioner->m_statistik_default($data2);
+      $this->m_kuesioner->m_create_soal($data);
+			// $id_sk = $this->m_kuesioner->m_create_soal($data);
+			// $data2 = array(
+			// 	'id_kuesioner' => $id_clone,
+			// 	'id_sub' => $clonesoal['id_sub'],
+			// 	'id_sk' => $id_sk,
+			// 	'jawaban1' => 0,
+			// 	'jawaban2' => 0,
+			// 	'jawaban3' => 0,
+			// 	'jawaban4' => 0,
+			// 	'jawaban5' => 0
+			// );
+			// $this->m_kuesioner->m_statistik_default($data2);
 		}
 
 		redirect('admin/daftar_kuesioner');
@@ -405,18 +407,19 @@ class Kuesioner extends CI_Controller{
 				'id_sub' => $sub[$i],
 				'soal_kuesioner' => $soal[$i]
 			);
-			$id_sk = $this->m_kuesioner->m_create_soal($data);
-			$data2 = array(
-				'id_kuesioner' => $id,
-				'id_sub' => $sub[$i],
-				'id_sk' => $id_sk,
-				'jawaban1' => 0,
-				'jawaban2' => 0,
-				'jawaban3' => 0,
-				'jawaban4' => 0,
-				'jawaban5' => 0
-			);
-			$this->m_kuesioner->m_statistik_default($data2);
+      $this->m_kuesioner->m_create_soal($data);
+			// $id_sk = $this->m_kuesioner->m_create_soal($data);
+			// $data2 = array(
+			// 	'id_kuesioner' => $id,
+			// 	'id_sub' => $sub[$i],
+			// 	'id_sk' => $id_sk,
+			// 	'jawaban1' => 0,
+			// 	'jawaban2' => 0,
+			// 	'jawaban3' => 0,
+			// 	'jawaban4' => 0,
+			// 	'jawaban5' => 0
+			// );
+			// $this->m_kuesioner->m_statistik_default($data2);
     }
 		redirect('admin/daftar_kuesioner');
 	}

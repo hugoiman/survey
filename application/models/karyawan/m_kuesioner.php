@@ -58,13 +58,13 @@ class M_kuesioner extends CI_Model{
 		return $this->db->query('Select jawaban from tb_respon_kuesioner where id_sk = '.$id_sk.' AND nipg='.$nipg.' AND id_kuesioner = '.$id_kuesioner.'');
 	}
 
-  function m_update_statistik1($id,$jawaban){ //menambah jawaban
-		$this->db->query('update tb_statistik set '.$jawaban.' = '.$jawaban.'+1 where id_sk = '.$id.'');
-	}
+  // function m_update_statistik1($id,$jawaban){ //menambah jawaban
+	// 	$this->db->query('update tb_statistik set '.$jawaban.' = '.$jawaban.'+1 where id_sk = '.$id.'');
+	// }
 
-	function m_update_statistik2($id,$jawaban){ //mengurang jawaban
-		$this->db->query('update tb_statistik set '.$jawaban.' = '.$jawaban.'-1 where id_sk = '.$id.'');
-	}
+	// function m_update_statistik2($id,$jawaban){ //mengurang jawaban
+	// 	$this->db->query('update tb_statistik set '.$jawaban.' = '.$jawaban.'-1 where id_sk = '.$id.'');
+	// }
 
   function m_update_jawaban($table,$where,$jawaban){ //update jawaban kuesioner
 		$this->db->where($where);
